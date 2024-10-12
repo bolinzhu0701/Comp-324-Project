@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Financial Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Financial Tracker</h1>
+        <div class="budget-section">
+            <h2>Set Your Budget</h2>
+            <input type="number" id="budget-input" placeholder="Enter your budget" />
+            <button id="set-budget-btn">Set Budget</button>
+            <p id="budget-message"></p>
+        </div>
+        
+        <div class="expense-section">
+            <h2>Add Expense</h2>
+            <select id="expense-category">
+                <option value="Food">Food</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Bills">Bills</option>
+                <option value="Housing">Housing</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Health">Health</option>
+                <option value="Custom">Add Custom Category</option>
+            </select>
+            <input type="text" id="custom-category-input" placeholder="Custom Category" style="display: none;" />
+            <input type="number" id="expense-input" placeholder="Enter expense amount" />
+            <button id="add-expense-btn">Add Expense</button>
+        </div>
+        
+        <div class="expense-list">
+            <h2>Expenses</h2>
+            <ul id="expenses-ul"></ul>
+            <p id="total-expenses">Total Expenses: $0</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
