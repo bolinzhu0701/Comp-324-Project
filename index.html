@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Financial Tracker</title>
+    <!-- Add Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Financial Tracker</h1>
+
+        <!-- Budget Section -->
         <div class="budget-section">
             <h2>Set Your Budget</h2>
-            <input type="number" id="budget-input" placeholder="Enter your budget" />
+            <input type="number" id="budget-input" placeholder="Enter your budget" min="0" required />
+            <!-- Savings goal input -->
+            <input type="number" id="savings-goal" placeholder="Enter savings goal" min="0" />
             <button id="set-budget-btn">Set Budget</button>
             <p id="budget-message"></p>
         </div>
         
+        <!-- Expense Section -->
         <div class="expense-section">
             <h2>Add Expense</h2>
             <select id="expense-category">
@@ -27,17 +34,23 @@
                 <option value="Health">Health</option>
                 <option value="Custom">Add Custom Category</option>
             </select>
+            <!-- Custom category input, initially hidden -->
             <input type="text" id="custom-category-input" placeholder="Custom Category" style="display: none;" />
-            <input type="number" id="expense-input" placeholder="Enter expense amount" />
+            <input type="number" id="expense-input" placeholder="Enter expense amount" min="0" required />
             <button id="add-expense-btn">Add Expense</button>
         </div>
         
+        <!-- Expense List Section -->
         <div class="expense-list">
             <h2>Expenses</h2>
             <ul id="expenses-ul"></ul>
             <p id="total-expenses">Total Expenses: $0</p>
         </div>
+
+        <!-- Expense distribution chart -->
+        <canvas id="expense-chart" width="400" height="400"></canvas>
+
+        <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
